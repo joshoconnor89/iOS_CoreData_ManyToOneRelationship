@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14D87h" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Games" representedClassName="Games" syncable="YES">
+        <attribute name="gameName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" minValueString="0" defaultValueString="0" syncable="YES"/>
+        <relationship name="gamesToPlayers" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Players" inverseName="playersToGame" inverseEntity="Players" syncable="YES"/>
+    </entity>
+    <entity name="Players" representedClassName="Players" syncable="YES">
+        <attribute name="playerName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="playersToGame" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Games" inverseName="gamesToPlayers" inverseEntity="Games" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Players" positionX="106" positionY="-288" width="128" height="73"/>
+        <element name="Games" positionX="-153" positionY="-268" width="128" height="88"/>
+    </elements>
+</model>
